@@ -5,6 +5,14 @@
 # FIT will be loaded at 0x02080000. Leave 16M for that, align it to 2M and load the kernel after it.
 KERNEL_LOADADDR := 0x03200000
 
+define Device/hinlink_opc-h68k
+  DEVICE_VENDOR := HINLINK
+  DEVICE_MODEL := OPC-H68K
+  SOC := rk3568
+  DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-drm-rockchip kmod-hwmon-pwmfan kmod-mt7916-firmware kmod-r8125 wpad-openssl
+endef
+TARGET_DEVICES += hinlink_opc-h68k
+
 define Device/armsom_sige7
   DEVICE_VENDOR := ArmSoM
   DEVICE_MODEL := Sige7
